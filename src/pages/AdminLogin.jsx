@@ -12,7 +12,8 @@ function AdminLogin() {
 
     if (username === "admin" && password === "admin123") {
       localStorage.setItem("adminLoggedIn", "true");
-      window.location.href = "/admin";
+
+      window.location.href = `${import.meta.env.BASE_URL}admin`;
     } else {
       setError("Invalid username or password.");
     }
@@ -59,7 +60,7 @@ function AdminLogin() {
           type="button"
           className="back-home-btn"
           onClick={() => {
-            window.location.href = "/";
+            window.location.href = import.meta.env.BASE_URL;
           }}
         >
           Back to Home

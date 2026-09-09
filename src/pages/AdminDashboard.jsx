@@ -2,17 +2,17 @@ import { useState } from "react";
 
 function AdminDashboard() {
   const [reports, setReports] = useState(
-    JSON.parse(localStorage.getItem("civicReports")) || [],
+    JSON.parse(localStorage.getItem("civicReports")) || []
   );
 
   const totalReports = reports.length;
 
   const pendingReports = reports.filter(
-    (report) => report.status === "Pending",
+    (report) => report.status === "Pending"
   ).length;
 
   const resolvedReports = reports.filter(
-    (report) => report.status === "Resolved",
+    (report) => report.status === "Resolved"
   ).length;
 
   return (
@@ -74,12 +74,12 @@ function AdminDashboard() {
                       const updatedReports = reports.map((item) =>
                         item.complaintId === report.complaintId
                           ? { ...item, status: "Resolved" }
-                          : item,
+                          : item
                       );
 
                       localStorage.setItem(
                         "civicReports",
-                        JSON.stringify(updatedReports),
+                        JSON.stringify(updatedReports)
                       );
 
                       setReports(updatedReports);
@@ -102,7 +102,7 @@ function AdminDashboard() {
           className="back-home-btn"
           onClick={() => {
             localStorage.removeItem("adminLoggedIn");
-            window.location.href = "/admin-login";
+            window.location.href = `${import.meta.env.BASE_URL}admin-login`;
           }}
         >
           Logout
@@ -112,7 +112,7 @@ function AdminDashboard() {
           type="button"
           className="back-home-btn"
           onClick={() => {
-            window.location.href = "/";
+            window.location.href = import.meta.env.BASE_URL;
           }}
         >
           Back to Home

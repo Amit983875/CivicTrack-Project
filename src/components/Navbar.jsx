@@ -6,14 +6,29 @@ function Navbar() {
       </div>
 
       <div className="nav-links">
-        <a href="#">Home</a>
-        <a href="/report">Report Issue</a>
-        <a href="/track">Track Issues</a>
-        <a href="/dashboard">Citizen Dashboard</a>
-        <a href="/admin-login">Admin Login</a>
+        <a href={import.meta.env.BASE_URL}>Home</a>
+
+        <a href={`${import.meta.env.BASE_URL}report`}>
+          Report Issue
+        </a>
+
+        <a href={`${import.meta.env.BASE_URL}track`}>
+          Track Issues
+        </a>
+
+        <a href={`${import.meta.env.BASE_URL}dashboard`}>
+          Citizen Dashboard
+        </a>
       </div>
 
-      <button className="login-btn">Login</button>
+      <button
+        className="login-btn"
+        onClick={() => {
+          window.location.href = `${import.meta.env.BASE_URL}admin-login`;
+        }}
+      >
+        Login
+      </button>
     </nav>
   );
 }

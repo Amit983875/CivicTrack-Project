@@ -7,34 +7,45 @@ import AdminDashboard from "./pages/AdminDashboard";
 import AdminLogin from "./pages/AdminLogin";
 
 function App() {
-  if (window.location.pathname === "/report") {
+  const params = new URLSearchParams(window.location.search);
+  const route = params.get("route");
+
+  const path = route
+    ? `/${route}`
+    : window.location.pathname;
+
+  if (path.endsWith("/report")) {
     return <ReportIssue />;
   }
-  if (window.location.pathname === "/track") {
+
+  if (path.endsWith("/track")) {
     return <TrackIssues />;
   }
-  if (window.location.pathname === "/dashboard") {
+
+  if (path.endsWith("/dashboard")) {
     return <CitizenDashboard />;
   }
-  if (window.location.pathname === "/admin") {
-    const isAdminLoggedIn = localStorage.getItem("adminLoggedIn") === "true";
+
+  if (path.endsWith("/admin-login")) {
+    return <AdminLogin />;
+  }
+
+  if (path.endsWith("/admin")) {
+    const isAdminLoggedIn =
+      localStorage.getItem("adminLoggedIn") === "true";
 
     if (!isAdminLoggedIn) {
-      window.location.href = "/admin-login";
+      window.location.href = `${import.meta.env.BASE_URL}admin-login`;
       return null;
     }
 
     return <AdminDashboard />;
-  }
-  if (window.location.pathname === "/admin-login") {
-    return <AdminLogin />;
   }
 
   return (
     <div className="app">
       <Navbar />
 
-      {/* Hero Section */}
       <main className="hero">
         <div className="hero-content">
           <p className="tagline">SMART CIVIC ISSUE REPORTING</p>
@@ -54,7 +65,7 @@ function App() {
             <button
               className="primary-btn"
               onClick={() => {
-                window.location.href = "/report";
+                window.location.href = `${import.meta.env.BASE_URL}report`;
               }}
             >
               Report an Issue
@@ -63,7 +74,7 @@ function App() {
             <button
               className="secondary-btn"
               onClick={() => {
-                window.location.href = "/track";
+                window.location.href = `${import.meta.env.BASE_URL}track`;
               }}
             >
               Track an Issue
@@ -72,7 +83,7 @@ function App() {
             <button
               className="secondary-btn"
               onClick={() => {
-                window.location.href = "/dashboard";
+                window.location.href = `${import.meta.env.BASE_URL}dashboard`;
               }}
             >
               Citizen Dashboard
@@ -82,7 +93,9 @@ function App() {
 
         <div className="hero-card">
           <div className="card-icon">📍</div>
+
           <h2>Your City. Your Voice.</h2>
+
           <p>
             Report broken roads, garbage dumps, open drains and other civic
             problems directly to the authorities.
@@ -90,7 +103,6 @@ function App() {
         </div>
       </main>
 
-      {/* Issue Categories */}
       <section className="categories">
         <h2>What can you report?</h2>
 

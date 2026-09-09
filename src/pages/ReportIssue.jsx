@@ -145,7 +145,7 @@ function ReportIssue() {
           type="button"
           className="back-home-btn"
           onClick={() => {
-            window.location.href = "/";
+            window.location.href = import.meta.env.BASE_URL;
           }}
         >
           Back to Home

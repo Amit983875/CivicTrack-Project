@@ -39,16 +39,17 @@ button {
   padding: 0 7%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   background: #ffffff;
   border-bottom: 1px solid #e5e7eb;
 }
 
 .logo {
+  flex-shrink: 0;
   color: #111827 !important;
   font-size: 28px;
   font-weight: 700;
   text-decoration: none;
+  margin-right: 90px;
 }
 
 .logo span {
@@ -58,7 +59,8 @@ button {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 38px;
+  flex: 1;
 }
 
 .nav-links a {
@@ -66,6 +68,7 @@ button {
   color: #111827 !important;
   font-size: 15px;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .nav-links a:hover {
@@ -73,13 +76,15 @@ button {
 }
 
 .login-btn {
+  flex-shrink: 0;
   border: none;
   background: #2563eb;
   color: #ffffff;
-  padding: 11px 22px;
+  padding: 11px 24px;
   border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
+  margin-left: 50px;
 }
 
 .login-btn:hover {
@@ -149,7 +154,9 @@ button {
   font-size: 15px;
   font-weight: 700;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease,
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
     background 0.2s ease;
 }
 
@@ -188,7 +195,9 @@ button {
   border: 1px solid #dbeafe;
   text-align: center;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .hero-card:hover {
@@ -240,7 +249,9 @@ button {
   border: 1px solid #e5e7eb;
   border-radius: 14px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s ease, box-shadow 0.3s ease,
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
     border-color 0.3s ease;
 }
 
@@ -301,7 +312,9 @@ button {
   font-size: 15px;
   font-family: inherit;
   outline: none;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
 }
 
 .form-group input::placeholder,
@@ -335,7 +348,10 @@ button {
   font-size: 16px;
   font-weight: 700;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s,
+    background 0.2s;
 }
 
 .submit-btn:hover {
@@ -353,7 +369,9 @@ button {
   color: #111827;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.2s, background 0.2s;
+  transition:
+    transform 0.2s,
+    background 0.2s;
 }
 
 .back-home-btn:hover {
@@ -541,7 +559,9 @@ button {
   font-size: 15px;
   font-weight: 700;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
 }
 
 .track-btn:hover {
@@ -670,7 +690,9 @@ button {
   border-radius: 14px;
   text-align: center;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
-  transition: transform 0.25s, box-shadow 0.25s;
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s;
 }
 
 .stat-card:hover {
@@ -709,7 +731,9 @@ button {
   background: #ffffff;
   border: 1px solid #e5e7eb;
   border-radius: 12px;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
 }
 
 .complaint-card:last-child {
@@ -749,7 +773,9 @@ button {
   font-size: 14px;
   font-weight: 700;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
 }
 
 .dashboard-container .complaint-card button:hover {
