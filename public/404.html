@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CivicTrack</title>
+
+    <script>
+      const base = "/CivicTrack-Project/";
+      const path = window.location.pathname;
+
+      if (path.startsWith(base) && path !== base) {
+        const route = path.substring(base.length);
+
+        window.location.replace(
+          base + "?route=" + encodeURIComponent(route)
+        );
+      } else {
+        window.location.replace(base);
+      }
+    </script>
+  </head>
+
+  <body>
+    <p>Loading CivicTrack...</p>
+  </body>
+</html>
